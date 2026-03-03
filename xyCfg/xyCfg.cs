@@ -59,20 +59,28 @@ namespace xy.Cfg
             setPar(genNode, pValues);
         }
 
-        private const string cfgFile = "xyCfg.json";
+        private static string cfgFile = "xyCfg.json";
         private const string genNode = "genNode";
 
         static private xyCfg instance;
-        static public void init(Dictionary<string,string> initCfgList)
+        static public void init(Dictionary<string,string> initCfgList, string? cFile = null)
         {
+            if (cFile != null)
+            {
+                cfgFile = cFile;
+            }
             Dictionary<string, Dictionary<string, string>> initCfg
                 = new Dictionary<string, Dictionary<string, string>>();
             initCfg.Add(genNode, initCfgList);
             init(initCfg);
         }
         static public void init(
-            Dictionary<string, Dictionary<string, string>> initCfg)
+            Dictionary<string, Dictionary<string, string>> initCfg, string? cFile = null)
         {
+            if(cFile != null)
+            {
+                cfgFile = cFile;
+            }
             if (!File.Exists(cfgFile))
             {
                 JsonObject JsonObj = new JsonObject();
