@@ -7,7 +7,7 @@
     <RootNamespace>xy.Cfg</RootNamespace>
     <PackageOutputPath>..\..\package</PackageOutputPath>
     <Title>Configuration manager</Title>
-    <Version>1.0.3</Version>
+    <Version>1.0.5</Version>
     <Authors>dooacontrol</Authors>
     <Company>dooacontrol</Company>
     <Description>A simple library for application configuration management</Description>
